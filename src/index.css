@@ -1,0 +1,237 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    /* Moroccan-Inspired Hardware Store Theme */
+    --background: 40 30% 98%;
+    --foreground: 168 70% 12%;
+
+    --card: 40 25% 96%;
+    --card-foreground: 168 70% 12%;
+
+    --popover: 40 30% 98%;
+    --popover-foreground: 168 70% 12%;
+
+    /* Deep Teal Primary */
+    --primary: 168 74% 26%;
+    --primary-foreground: 40 30% 98%;
+
+    /* Terracotta Secondary */
+    --secondary: 20 84% 40%;
+    --secondary-foreground: 40 30% 98%;
+
+    /* Golden Amber Accent */
+    --accent: 38 92% 50%;
+    --accent-foreground: 168 70% 12%;
+
+    --muted: 40 20% 92%;
+    --muted-foreground: 168 30% 35%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 168 20% 85%;
+    --input: 168 20% 85%;
+    --ring: 168 74% 26%;
+
+    --radius: 0.75rem;
+
+    /* Custom Moroccan colors */
+    --teal-50: 166 76% 97%;
+    --teal-100: 167 85% 89%;
+    --teal-200: 168 84% 78%;
+    --teal-300: 170 77% 60%;
+    --teal-400: 171 77% 42%;
+    --teal-500: 172 80% 34%;
+    --teal-600: 168 74% 26%;
+    --teal-700: 173 80% 24%;
+    --teal-800: 173 80% 18%;
+    --teal-900: 168 70% 12%;
+
+    --terracotta-50: 24 100% 97%;
+    --terracotta-100: 24 95% 92%;
+    --terracotta-200: 22 90% 82%;
+    --terracotta-300: 20 88% 68%;
+    --terracotta-400: 18 85% 56%;
+    --terracotta-500: 20 84% 48%;
+    --terracotta-600: 20 84% 40%;
+    --terracotta-700: 18 80% 32%;
+    --terracotta-800: 16 75% 26%;
+    --terracotta-900: 14 70% 20%;
+
+    --amber-50: 48 100% 96%;
+    --amber-100: 48 96% 89%;
+    --amber-200: 48 95% 76%;
+    --amber-300: 45 93% 58%;
+    --amber-400: 38 92% 50%;
+    --amber-500: 32 95% 44%;
+    --amber-600: 26 90% 37%;
+    --amber-700: 22 82% 31%;
+    --amber-800: 20 77% 26%;
+    --amber-900: 20 73% 22%;
+  }
+
+  .dark {
+    --background: 168 50% 6%;
+    --foreground: 40 25% 95%;
+
+    --card: 168 45% 10%;
+    --card-foreground: 40 25% 95%;
+
+    --popover: 168 45% 10%;
+    --popover-foreground: 40 25% 95%;
+
+    --primary: 171 77% 42%;
+    --primary-foreground: 168 70% 6%;
+
+    --secondary: 20 84% 48%;
+    --secondary-foreground: 40 30% 98%;
+
+    --accent: 45 93% 58%;
+    --accent-foreground: 168 70% 6%;
+
+    --muted: 168 40% 16%;
+    --muted-foreground: 40 20% 65%;
+
+    --destructive: 0 75% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 168 30% 20%;
+    --input: 168 30% 20%;
+    --ring: 171 77% 42%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'DM Sans', system-ui, sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary) / 0.4);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary) / 0.6);
+}
+
+/* Moroccan pattern overlay */
+.moroccan-pattern {
+  background-image:
+    radial-gradient(circle at 25% 25%, hsl(var(--primary) / 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, hsl(var(--secondary) / 0.05) 0%, transparent 50%);
+}
+
+/* Geometric gradient backgrounds */
+.gradient-teal {
+  background: linear-gradient(135deg, hsl(var(--teal-100)), hsl(var(--teal-200)));
+}
+
+.gradient-terracotta {
+  background: linear-gradient(135deg, hsl(var(--terracotta-100)), hsl(var(--terracotta-200)));
+}
+
+.gradient-amber {
+  background: linear-gradient(135deg, hsl(var(--amber-100)), hsl(var(--amber-200)));
+}
+
+.gradient-hero {
+  background: linear-gradient(135deg,
+    hsl(var(--teal-50)) 0%,
+    hsl(var(--terracotta-50)) 50%,
+    hsl(var(--amber-50)) 100%
+  );
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Animation utilities */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    hsl(var(--muted)) 0%,
+    hsl(var(--card)) 50%,
+    hsl(var(--muted)) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.animate-slideIn {
+  animation: slideIn 0.5s ease-out forwards;
+}
+
+/* Staggered animation delays */
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+.stagger-5 { animation-delay: 0.5s; }
+.stagger-6 { animation-delay: 0.6s; }
+
+/* Card hover effects */
+.card-hover {
+  @apply transition-all duration-300;
+}
+
+.card-hover:hover {
+  @apply -translate-y-1 shadow-xl;
+}
